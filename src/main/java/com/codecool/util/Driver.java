@@ -15,14 +15,14 @@ public class Driver {
     static WebDriver driver;
     private static String HUB_URL = System.getenv("HUB_URL");
     private static String BROWSER = System.getenv("BROWSER");
-    private static Platform PLATFORM = Platform.fromString(System.getenv("PLATFORM"));
+    //private static Platform PLATFORM = Platform.fromString(System.getenv("PLATFORM"));
 
     public static WebDriver getInstance() {
         if (driver == null)
             try {
                 DesiredCapabilities capability = DesiredCapabilities.chrome();
                 capability.setBrowserName(BROWSER);
-                capability.setPlatform(PLATFORM);
+                capability.setPlatform(Platform.LINUX);
                 driver = new RemoteWebDriver(new URL(HUB_URL), capability);
             } catch(MalformedURLException e) {
                 System.out.println(e);
