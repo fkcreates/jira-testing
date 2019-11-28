@@ -18,7 +18,6 @@ public class Driver {
     private static Platform PLATFORM = Platform.fromString(System.getenv("PLATFORM"));
 
     public static WebDriver getInstance() {
-        System.out.println(PLATFORM);
         if (driver == null)
             try {
                 DesiredCapabilities capability = DesiredCapabilities.chrome();

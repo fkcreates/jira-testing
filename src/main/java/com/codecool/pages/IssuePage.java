@@ -112,10 +112,13 @@ public class IssuePage extends BasePage {
 
     public void navigateToIssue(String baseurl, String issuePage){
         driver.navigate().to(baseurl + "browse/" + issuePage);
+        //driver.get(baseurl + "browse/" + issuePage); //it fails here
+        //wait.until(ExpectedConditions.titleContains(issuePage));
     }
 
     public void navigateToNonExistingProject(){
         driver.get("https://jira.codecool.codecanvas.hu/browse/THREESIX-666666");
+        //wait.until(ExpectedConditions.titleIs("- Jira"));
     }
 
     public String getHeader(){
