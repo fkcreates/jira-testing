@@ -17,6 +17,7 @@ public class Util {
     public void tearDown(){
         //Driver.resetDriver();
         driver.quit();
+        Driver.driver = null;
     }
 
     public void mainLogin(String user){
